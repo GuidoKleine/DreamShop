@@ -41,7 +41,7 @@ public class ProductController {
         }
     }
 
-    @GetMapping("/product/by-category")
+    @GetMapping("/product/{category}/all/products")
     public ResponseEntity<ApiResponse> getProductByCategory(@RequestParam String category) {
         try {
             List<Product> productList = productService.getProductsByCategory(category);
@@ -67,7 +67,7 @@ public class ProductController {
         }
     }
 
-    @GetMapping("/by/category-and-brand")
+    @GetMapping("products/by/category-and-brand")
     public ResponseEntity<ApiResponse> getProductsByCategoryAndBrand(@RequestParam String category, @RequestParam String brand) {
         try {
             List<Product> productList = productService.getProductsByCategoryAndBrand(category, brand);
